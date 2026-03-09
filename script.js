@@ -3,6 +3,8 @@ const days = document.querySelector(".days");
 const hours = document.querySelector(".hours");
 const minutes = document.querySelector(".minutes");
 const seconds = document.querySelector(".seconds");
+const email = document.querySelector(".form");
+const btn = document.querySelector(".btn");
 
 // Création de la variable twoNumberDisplay
 let twoNumberDisplay = "";
@@ -99,3 +101,53 @@ window.onload = () => {
 
   interval = setInterval(breakdown, 1000); // Appel de la fonction breakdown toute les 1000ms soit toutes les secondes
 };
+
+// Regex
+const regexEmail = /^[a-zA-Z0-9.-_]+[@]{1}[a-zA-Z0-9.-_]+[.]{1}[a-z]{2,10}$/;
+
+/**
+ * Déclaration de la fonction emailValidation pour la validation du champ email
+ * @param {String} email
+ */
+const emailValidation = (email) => {
+  // Ecoute de l'événement "input" sur l'input email
+  email.addEventListener("input", (e) => {
+    e.preventDefault();
+    if (regexEmail.test(email.value) == false) {
+      emailEmoji.textContent = "❌";
+      return false;
+    } else {
+      emailEmoji.textContent = "✔️";
+      return true;
+    }
+  });
+};
+// Appel de la fonction emailValidation
+emailValidation(email);
+
+// Déclaration de la fonction send qui permet d'envoyer les données
+const send = () => {
+  // Ecoute de l'événement "click" sur le bouton
+  btn.addEventListener("click", (e) => {
+    // Suppression du comportement par défaut
+    e.preventDefault();
+    if (regexEmail.test(email.value) == false) {
+      alert("Veuillez remplir correctement le champ du formulaire !");
+    } else {
+      // Création de l'objet contact
+      const contact = {
+        email: email.value,
+      };
+      console.log(contact);
+      alert(
+        "Inscription confirmée ! Nous allons vous envoyer un mail de confirmation sous 24h. Cordialement."
+      );
+      // Rechargement de la page
+      window.location.reload();
+      email.value = "";
+      window.scrollTo(0, 0);
+    }
+  });
+};
+// Appel de la fonction send()
+send();
