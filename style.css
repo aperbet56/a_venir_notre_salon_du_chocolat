@@ -114,6 +114,17 @@ button,
     padding-left: 0.5em;
     margin-top: 1.6em;
     font-weight: bold;
+    position: relative;
+}
+
+.emailEmoji {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 51%;
+    transform: translateY(-50%);
+    right: 320px;
+    font-size: 1em;
 }
 
 .form__subscribe button {
