@@ -104,7 +104,7 @@ button,
 }
 
 .form {
-    min-width: 250px;
+    width: 250px;
     height: 50px;
     padding: 0;
     margin-right: -6px;
@@ -141,14 +141,41 @@ button,
     justify-content: center;
     color: #0f0e17;
     font-size: 2.2em;
+    width: 100%;
 }
 
 .icon__list__item {
-    padding-right: 50px;
+    padding-inline: 50px;
     transform: scale(1);
     transition: transform 0.3s ease-in-out;
 }
 
 .icon__list__item:hover {
     transform: scale(1.5);
+}
+
+/**** Responsive design version tablette ****/
+
+@media screen and (max-width: 767px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .left__container,
+    .right {
+        width: 100%;
+        height: 50vh;
+    }
+
+    .left {
+        clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
+    }
+
+    .left p {
+        margin-right: 0;
+    }
+
+    .form__subscribe {
+        margin-left: 0;
+    }
 }
