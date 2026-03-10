@@ -1,5 +1,7 @@
 ## A VENIR : NOTRE SALON DU CHOCOLAT 🍫 / COMING SOON
 
+![Design preview for the project](./img/preview.png)
+
 ## Le challenge
 
 Création d'une page coming soon en HTML5, CSS3 et JavaScript.
