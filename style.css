@@ -183,6 +183,10 @@ button,
 /**** Responsive design version mobile ****/
 
 @media screen and (max-width: 576px) {
+    .left p {
+        font-size: 3em;
+    }
+
     .form__subscribe {
         display: flex;
         flex-direction: column;
