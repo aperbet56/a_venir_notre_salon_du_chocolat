@@ -114,10 +114,8 @@ const emailValidation = (email) => {
   email.addEventListener("input", (e) => {
     e.preventDefault();
     if (regexEmail.test(email.value) == false) {
-      emailEmoji.textContent = "❌";
       return false;
     } else {
-      emailEmoji.textContent = "✔️";
       return true;
     }
   });
