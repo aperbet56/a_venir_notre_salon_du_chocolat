@@ -22,7 +22,7 @@ twoNumberDisplay = (item) => {
 const now = new Date();
 
 // Date de fin du compteur
-const myDate = new Date("2026-05-24 00:00:00");
+const myDate = new Date("2027-05-24 00:00:00");
 
 // Durée entre les deux dates
 const duration = myDate - now;
